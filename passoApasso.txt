@@ -1,0 +1,81 @@
+biblioteca para upload de arquivos:
+
+1- -npm init (vai criar o package,json)
+2- instalar as dependencias...
+	npm install dotenv express
+3	
+	tsc --init (vai criar o arquivo tsconfig)
+abrir o tsconfig e modificar:
+target para "es6"
+rootDir: "./src"
+"outDir": "./dist"
+moduleResolution: e descomentar
+
+criar o public fora do src
+
+criar a src 
+criar o servidor:
+server.ts dentro do src
+
+criar dentro do src um diretorio chamado routes e dentro dele criar o arquivo index.ts
+
+dentro de index:
+import {Router, Request, Response} from 'express';
+const router = Router(); 
+ex de criação de rota
+router.get('/', (req: Request, res: Response)=>{
+	res.send('ola mundo');
+});
+
+----------------------------------------------------
+
+DENTRO DO ARQUIVO SERVER:
+
+import express from "express";
+import path from "path";
+import dotenv from 'dotenv';
+
+
+dotenv.config();
+
+const server = express();
+
+
+INSTALAR O NODEMON E O TSNODE GLOBALMENTE NA MAQUINA
+-npm install -g typescript
+-npm install -g ts-node
+
+-npm install -g nodemon
+-npm install --save-dev nodemon
+
+
+
+no arquivo package.jsnon:
+criar o comando para executar ele:
+
+"start-dev" :"nodemon -e ts,json src/server.ts"
+
+instalar a biblioteca cors para evitar erros na api...
+npm install cors
+npm install -D @types/cors
+
+
+para executar o projeto: npm run start-dev
+
+instakar a biblioteca de upload multer
+
+- npm install multer
+4- instalar os types 
+npm install -D @types/multer
+
+import multer from 'multer';
+
+seguir a documentação: 
+
+const upload = multer({
+    dest: './tmp'
+})
+
+
+
+ 
